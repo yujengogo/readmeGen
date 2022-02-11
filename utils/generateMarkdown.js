@@ -2,47 +2,64 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
 
-  switch(license) {
+  switch (license) {
     case "Apache 2.0 License":
       return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
       break;
-      case ""
+    case "Boost Software License 1.0":
+      return "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
+      break;
+    case "BSD 3-Clause License":
+      return "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+      break;
   }
 
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  switch (license) {
+    case "Apache 2.0 License":
+      return "[https://opensource.org/licenses/Apache-2.0";
+      break;
+    case "Boost Software License 1.0":
+      return "https://www.boost.org/LICENSE_1_0.txt";
+      break;
+    case "BSD 3-Clause License":
+      return "https://opensource.org/licenses/BSD-3-Clause";
+      break;
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
 
-  switch(license) {
+  switch (license) {
     case "Apache 2.0 License":
       return "The Apache License 2.0 outlines what users are allowed to do with the licensed code. Under this license, users can: Use the code commercially: Companies can include the licensed code in proprietary software that they then sell to customers";
       break;
-      case ""
-}
+      case "Boost Software License 1.0":
+        return "Boost is a set of libraries for the C++ programming language that provides support for tasks and structures such as linear algebra, pseudorandom number generation, multithreading, image processing, regular expressions, and unit testing.";
+        break;
+      case "BSD 3-Clause License":
+        return "The BSD 3-clause license allows you almost unlimited freedom with the software so long as you include the BSD copyright and license notice in it (found in Fulltext). You may not use the names of the original company or its members to endorse derived products.";
+        break;
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.yourProjectTitle}
+  // TODO: Create a function to generate markdown for README
+  function generateMarkdown(data) {
+    return `# ${data.yourProjectTitle}
 
   ## Description
   
-  Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+  -${data.description1}
+  -${data.description2}
+  -${data.description3}
+  -${data.description4}
+
   
-  - What was your motivation?
-  - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-  - What problem does it solve?
-  - What did you learn?
-  
-  ## Table of Contents (Optional)
-  
-  If your README is long, add a table of contents to make it easy for users to find what they need.
-  
+  ## Table of Contents 
+
   - [Installation](#installation)
   - [Usage](#usage)
   - [Credits](#credits)
@@ -50,45 +67,37 @@ function generateMarkdown(data) {
   
   ## Installation
   
-  What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+  ${data.installation}
   
   ## Usage
   
-  Provide instructions and examples for use. Include screenshots as needed.
+ 
   
   ## Credits
   
-  List your collaborators, if any, with links to their GitHub profiles.
-  
-  If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-  
-  If you followed tutorials, include links to those here as well.
+  ${data.credits}
   
   ## License
   
-  The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+  ${renderLicenseLink(data.license)}
+  ${renderLicenseSection(license)}
   
-  ---
-  
-  🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
   
   ## Badges
   
   ${renderLicenseBadge(data.license)}
   
-  Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-  
+
   ## Features
   
-  If your project has a lot of features, list them here.
-  
-  ## How to Contribute
-  
-  If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-  
-  ## Tests
-  
-  Go the extra mile and write tests for your application. Then provide examples on how to run them here.`;
-}
+  ${data.feature1}
 
-module.exports = generateMarkdown;
+  ${data.feature2}
+
+  ${data.feature3}
+  
+  
+`;
+  }
+
+  module.exports = generateMarkdown;

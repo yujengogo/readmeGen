@@ -36,7 +36,12 @@ const questions = [
       message: 'What are the steps required to install your project?.',
     },
     {
-      type: 'rawlist',
+      type: 'input',
+      name: 'credits',
+      message: 'who are your collaborators github profiles.',
+    },
+    {
+      type: 'list',
       name: 'license',
       message: 'which license would you like to use?.',
       choices: [
@@ -44,6 +49,19 @@ const questions = [
         "Boost Software License 1.0",
         "BSD 3-Clause License"
       ]
+    },
+    {
+      type: 'input',
+      name: 'feature1',
+      message: 'What features is in this project?',
+    },   {
+      type: 'input',
+      name: 'feature2',
+      message: 'Any onther feature?',
+    },   {
+      type: 'input',
+      name: 'feature3',
+      message: 'Any other feature?',
     },
   ]
 
