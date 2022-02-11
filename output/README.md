@@ -1,34 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-
-  switch(license) {
-    case "Apache 2.0 License":
-      return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
-      break;
-      case ""
-  }
-
-}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-
-  switch(license) {
-    case "Apache 2.0 License":
-      return "The Apache License 2.0 outlines what users are allowed to do with the licensed code. Under this license, users can: Use the code commercially: Companies can include the licensed code in proprietary software that they then sell to customers";
-      break;
-      case ""
-}
-
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.yourProjectTitle}
+# Readme Geneartor
 
   ## Description
   
@@ -74,7 +44,7 @@ function generateMarkdown(data) {
   
   ## Badges
   
-  ${renderLicenseBadge(data.license)}
+  [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
   
   Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
   
@@ -88,7 +58,4 @@ function generateMarkdown(data) {
   
   ## Tests
   
-  Go the extra mile and write tests for your application. Then provide examples on how to run them here.`;
-}
-
-module.exports = generateMarkdown;
+  Go the extra mile and write tests for your application. Then provide examples on how to run them here.
