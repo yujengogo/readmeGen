@@ -15,7 +15,6 @@ function renderLicenseBadge(license) {
   }
 
 }
-
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
@@ -29,8 +28,8 @@ function renderLicenseLink(license) {
     case "BSD 3-Clause License":
       return "https://opensource.org/licenses/BSD-3-Clause";
       break;
-}
-
+  }
+};
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
@@ -39,17 +38,18 @@ function renderLicenseSection(license) {
     case "Apache 2.0 License":
       return "The Apache License 2.0 outlines what users are allowed to do with the licensed code. Under this license, users can: Use the code commercially: Companies can include the licensed code in proprietary software that they then sell to customers";
       break;
-      case "Boost Software License 1.0":
-        return "Boost is a set of libraries for the C++ programming language that provides support for tasks and structures such as linear algebra, pseudorandom number generation, multithreading, image processing, regular expressions, and unit testing.";
-        break;
-      case "BSD 3-Clause License":
-        return "The BSD 3-clause license allows you almost unlimited freedom with the software so long as you include the BSD copyright and license notice in it (found in Fulltext). You may not use the names of the original company or its members to endorse derived products.";
-        break;
-
-  // TODO: Create a function to generate markdown for README
-  function generateMarkdown(data) {
-    return `# ${data.yourProjectTitle}
-
+    case "Boost Software License 1.0":
+      return "Boost is a set of libraries for the C++ programming language that provides support for tasks and structures such as linear algebra, pseudorandom number generation, multithreading, image processing, regular expressions, and unit testing.";
+      break;
+    case "BSD 3-Clause License":
+      return "The BSD 3-clause license allows you almost unlimited freedom with the software so long as you include the BSD copyright and license notice in it (found in Fulltext). You may not use the names of the original company or its members to endorse derived products.";
+      break;
+  }
+};
+// TODO: Create a function to generate markdown for README
+function generateMarkdown(data) {
+  return `# ${data.yourProjectTitle}
+        
   ## Description
   
   -${data.description1}
@@ -80,7 +80,7 @@ function renderLicenseSection(license) {
   ## License
   
   ${renderLicenseLink(data.license)}
-  ${renderLicenseSection(license)}
+  ${renderLicenseSection(data.license)}
   
   
   ## Badges
@@ -98,6 +98,6 @@ function renderLicenseSection(license) {
   
   
 `;
-  }
+};
 
-  module.exports = generateMarkdown;
+module.exports = generateMarkdown;
