@@ -47,7 +47,8 @@ const questions = [
       choices: [
         "Apache 2.0 License",
         "Boost Software License 1.0",
-        "BSD 3-Clause License"
+        "BSD 3-Clause License",
+        "None"
       ]
     },
     {
